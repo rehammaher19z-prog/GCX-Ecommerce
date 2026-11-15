@@ -1,0 +1,145 @@
+
+/* Swiper Background */
+.mySwiper {
+  width: 100%;
+  height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color:rgba(245, 245, 220, 0.103);
+  margin-top: 130px;
+}
+
+/* Each Slide */
+.mySwiper .swiper-slide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 25px 50px;
+  box-sizing: border-box;
+  background-color: rgba(245, 245, 220, 0.041);
+  color: #702632;
+  
+}
+
+/* //// */
+[data-aos="fade-up"] {
+  transform: translate3d(0, 100px, 0);
+  opacity: 0;
+}
+
+[data-aos="fade-up"].aos-animate {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+/* ///////// */
+/* Text Content */
+.mySwiper .content {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  z-index: 2;
+}
+
+.mySwiper .content h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #8b6262;
+}
+
+.mySwiper .content h3 {
+  font-size: 38px;
+  line-height: 1.3;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #702632;
+}
+
+.mySwiper .content p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #665454;
+}
+
+/* Shop Button */
+.mySwiper .content .btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #702632;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.mySwiper .content .btn:hover {
+  background-color: #501923;
+}
+
+/* Product Image */
+.mySwiper .swiper-slide img {
+  display: block;
+  flex: 0 1 50%;
+  width: 50%;
+  height: 440px;
+  min-width: 0;
+  object-fit: contain;
+  object-position: center;
+  mix-blend-mode: multiply;
+
+}
+
+/* Pagination */
+.mySwiper .swiper-pagination {
+  bottom: 15px;
+}
+
+.mySwiper .swiper-pagination-bullet {
+  background-color: #702632;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+
+.mySwiper .swiper-pagination-bullet-active {
+  width: 24px;
+  border-radius: 6px;
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mySwiper {
+    height: 350px;
+  }
+
+  .mySwiper .swiper-slide {
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .mySwiper .content h4 {
+    font-size: 13px;
+  }
+
+  .mySwiper .content h3 {
+    font-size: 23px;
+  }
+
+  .mySwiper .content p {
+    font-size: 12px;
+  }
+
+  .mySwiper .content .btn {
+    padding: 9px 14px;
+    font-size: 13px;
+  }
+
+  .mySwiper .swiper-slide img {
+    flex-basis: 48%;
+    width: 48%;
+    height: 280px;
+  }
+}

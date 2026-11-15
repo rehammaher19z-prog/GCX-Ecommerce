@@ -1,0 +1,188 @@
+.SearchPage {
+    min-height: 70vh;
+
+    background: var(--bg-color);
+}
+
+/* Page Title */
+.Search_Title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.Search_Title > span {
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.Search_Title h2 {
+    color: var(--text-color);
+    font-size: 30px;
+    margin: 12px 0;
+}
+
+.Search_Title h2 strong {
+    color: var(--primary-color);
+}
+
+.Search_Title p {
+    color: var(--secondary-text);
+    font-size: 15px;
+}
+
+/* Products Grid */
+.Search_Products {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* Loading */
+.Search_Loading {
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.Loading_Circle {
+    width: 55px;
+    height: 55px;
+    border: 5px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: SearchSpin 0.8s linear infinite;
+    margin-bottom: 22px;
+}
+
+@keyframes SearchSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.Search_Loading h3 {
+    color: var(--text-color);
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.Search_Loading p {
+    color: var(--secondary-text);
+}
+
+/* Not Found */
+.Not_Found {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.NotFound_Images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.NotFound_Images img {
+    width: 105px;
+    height: 115px;
+    object-fit: cover;
+    border-radius: 20px;
+    padding: 5px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 25px var(--shadow-color);
+    animation: FloatImage 3s ease-in-out infinite;
+}
+
+.NotFound_Images img:nth-child(2) {
+    transform: translateY(-18px) rotate(5deg);
+    animation-delay: 0.3s;
+}
+
+.NotFound_Images img:nth-child(3) {
+    transform: translateY(12px) rotate(-5deg);
+    animation-delay: 0.6s;
+}
+
+.NotFound_Images img:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+@keyframes FloatImage {
+    0%, 100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -10px;
+    }
+}
+
+.Not_Found h2 {
+    color: var(--text-color);
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.Not_Found p {
+    color: var(--secondary-text);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.Not_Found p strong {
+    color: var(--primary-color);
+}
+
+.Not_Found > span {
+    color: var(--primary-color);
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .Search_Products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .SearchPage {
+        padding: 30px 15px;
+    }
+
+    .Search_Title h2 {
+        font-size: 23px;
+    }
+
+    .Search_Products {
+        grid-template-columns: 1fr;
+    }
+
+    .NotFound_Images {
+        gap: 7px;
+    }
+
+    .NotFound_Images img {
+        width: 70px;
+        height: 80px;
+        border-radius: 13px;
+    }
+
+    .Not_Found h2 {
+        font-size: 23px;
+    }
+}

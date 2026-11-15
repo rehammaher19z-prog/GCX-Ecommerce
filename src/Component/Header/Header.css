@@ -1,0 +1,780 @@
+
+/* ========================================
+   GLOBAL HEADER VARIABLES
+======================================== */
+
+:root {
+    --primary-color: #8150C8;
+    --primary-hover: #6D3EB0;
+
+    --secondary-color: #E8D9FA;
+    --light-purple: #F5EDFF;
+
+    --background-color: #FFF7FC;
+    --white-color: #FFFFFF;
+
+    --text-color: #252044;
+    --text-light: #77718A;
+
+    --border-color: #E6D8F8;
+    --shadow-color: rgba(129, 80, 200, 0.12);
+
+    --secondary-bg: #F5EDFF;
+    --header-bottom-bg: #8150C8;
+
+    --top-header-height: 65px;
+    --bottom-header-height: 46px;
+}
+
+:root.dark-mode {
+    --primary-color: #A77CE0;
+    --primary-hover: #BD9AEB;
+
+    --secondary-color: #40334F;
+    --light-purple: #342744;
+
+    --background-color: #17131F;
+    --white-color: #282033;
+
+    --text-color: #F5EEFF;
+    --text-light: #B8A9CA;
+
+    --border-color: #40334F;
+    --shadow-color: rgba(0, 0, 0, 0.25);
+
+    --secondary-bg: #30243E;
+    --header-bottom-bg: #211A2B;
+}
+
+/* ========================================
+   TOP HEADER
+======================================== */
+
+.Top {
+    width: 100%;
+    height: var(--top-header-height);
+
+    background-color: var(--background-color);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1100;
+
+    box-shadow: 0 2px 12px var(--shadow-color);
+    transition: background-color 0.3s ease;
+
+    box-sizing: border-box;
+}
+
+.Top .container {
+    width: 100%;
+    height: 100%;
+
+    padding: 5px 3%;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    background-color: var(--background-color);
+
+    box-sizing: border-box;
+}
+
+/* Logo */
+
+.Top .container > a img {
+    width: 65px;
+    max-height: 52px;
+
+    display: block;
+    object-fit: contain;
+
+    border-radius: 10%;
+}
+
+/* ========================================
+   SEARCH BOX
+======================================== */
+
+.Top .search-box {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: min(450px, 45%);
+    height: 38px;
+
+    background-color: var(--white-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+
+    overflow: visible;
+
+    transition: 0.3s ease;
+}
+
+.Top .search-box:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--shadow-color);
+}
+
+.Top .search-box input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+
+    padding: 0 14px;
+
+    border: none;
+    outline: none;
+
+    background-color: transparent;
+    color: var(--text-color);
+
+    font-size: 13px;
+}
+
+.Top .search-box input::placeholder {
+    color: var(--text-light);
+}
+
+.Top .search-box button {
+    height: 100%;
+    padding: 0 15px;
+
+    border: none;
+    border-radius: 0 25px 25px 0;
+
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.Top .search-box button i {
+    color: #FFFFFF;
+}
+
+.Top .search-box button:hover {
+    background-color: var(--primary-hover);
+}
+
+/* ========================================
+   HEADER ICONS
+======================================== */
+
+.Top .Icon {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.Top .Icon button {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+
+    font-size: 15px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.Top .Icon button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* Theme Button */
+
+.Top .Icon .Theme {
+    background-color: var(--secondary-bg);
+    color: var(--primary-color);
+
+    border: 1px solid var(--border-color);
+    font-size: 15px;
+}
+
+.Top .Icon .Theme:hover {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+
+    transform: rotate(15deg);
+}
+
+/* Notification Count */
+
+.Top .Icon .count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+
+    min-width: 16px;
+    height: 16px;
+    padding: 0 3px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid var(--background-color);
+    border-radius: 50%;
+
+    background-color: var(--white-color);
+    color: var(--primary-color);
+
+    font-size: 10px;
+    font-weight: bold;
+
+    box-sizing: content-box;
+}
+
+/* ========================================
+   BOTTOM HEADER
+======================================== */
+
+.bottom_header {
+    width: 100%;
+    height: var(--bottom-header-height);
+
+    background-color: var(--header-bottom-bg);
+    color: #FFFFFF;
+
+    position: fixed;
+    top: var(--top-header-height);
+    left: 0;
+
+    z-index: 1050;
+
+    transition: background-color 0.3s ease;
+    
+}
+
+.bottom_header .container {
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 4px 3%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    box-sizing: border-box;
+}
+
+/* Main Navigation */
+
+.bottom_header .nav {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* ========================================
+   CATEGORY BUTTON
+======================================== */
+
+.bottom_header .category_nav {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.bottom_header .category_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+    padding: 7px 11px;
+
+    background-color: var(--white-color);
+    color: var(--primary-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.bottom_header .category_btn p {
+    margin: 0;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.bottom_header .category_btn:hover {
+    background-color: var(--light-purple);
+}
+
+/* ========================================
+   CATEGORIES DROPDOWN
+======================================== */
+
+.bottom_header .category_nav_list {
+    position: absolute;
+
+    top: calc(100% + 8px);
+    left: 0;
+
+    min-width: 200px;
+    max-height: 350px;
+
+    padding: 7px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    background-color: var(--white-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+
+    box-shadow: 0 8px 25px var(--shadow-color);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--light-purple);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-10px);
+    transition: 0.3s ease;
+}
+
+.bottom_header .category_nav_list.active {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+/* Dropdown Scrollbar */
+
+.bottom_header .category_nav_list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.bottom_header .category_nav_list::-webkit-scrollbar-track {
+    background-color: var(--light-purple);
+}
+
+.bottom_header .category_nav_list::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+/* Category Links */
+
+.bottom_header .category_nav_list a {
+    display: block;
+    padding: 9px 11px;
+
+    color: var(--text-color);
+    font-size: 12px;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+    border-bottom: 1px solid var(--border-color);
+
+    transition: 0.2s ease;
+}
+
+.bottom_header .category_nav_list a:hover {
+    background-color: var(--light-purple);
+    color: var(--primary-color);
+
+    padding-left: 15px;
+}
+
+/* ========================================
+   NAVIGATION LINKS
+======================================== */
+
+.bottom_header .nav_links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.bottom_header .nav_links a {
+    position: relative;
+
+    padding: 6px 0;
+
+    color: #FFFFFF;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: 0.3s ease;
+}
+
+.bottom_header .nav_links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: #FFFFFF;
+
+    transition: 0.3s ease;
+}
+
+.bottom_header .nav_links a:hover::after,
+.bottom_header .nav_links a.active::after {
+    width: 100%;
+}
+
+.bottom_header .nav_links a:hover,
+.bottom_header .nav_links a.active {
+    color: #FFFFFF;
+}
+
+/* ========================================
+   LOGIN & SIGNUP
+======================================== */
+
+.bottom_header .login_signup {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+margin-left: 10px;
+    flex-shrink: 0;
+}
+
+.bottom_header .login_signup .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+    padding: 6px 10px;
+
+    border: 1px solid #FFFFFF;
+    border-radius: 6px;
+
+    background-color: transparent;
+    color: #FFFFFF;
+
+    font-size: 11px;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: 0.3s ease;
+}
+
+.bottom_header .login_signup .btn:hover {
+    background-color: #FFFFFF;
+    color: var(--primary-color);
+}
+
+/* ========================================
+   SEARCH SUGGESTIONS
+======================================== */
+
+.suggestions {
+    position: absolute;
+
+    top: calc(100%);
+    left: 48%;
+
+    transform: translateX(-50%);
+
+    width: 500px;
+    max-width: calc(100vw - 32px);
+
+    background: var(--white-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+
+    box-shadow: 0 10px 30px var(--shadow-color);
+
+    overflow: hidden;
+    z-index: 2000;
+
+    padding: 6px;
+
+    animation: showSuggestions 0.2s ease;
+}
+
+/* Suggestion Item */
+
+.suggestion-item {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    padding: 10px 12px;
+
+    border-radius: 9px;
+
+    color: var(--text-color);
+    font-size: 13px;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.suggestion-item i {
+    color: var(--text-light);
+    font-size: 12px;
+}
+
+.suggestion-item:hover {
+    background: var(--secondary-bg);
+    color: var(--primary-color);
+
+    padding-left: 17px;
+}
+
+.suggestion-item:hover i {
+    color: var(--primary-color);
+}
+
+@keyframes showSuggestions {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -7px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .Top .container {
+        gap: 12px;
+        padding: 5px 2%;
+    }
+
+    .Top .search-box {
+        width: 42%;
+    }
+
+    .Top .Icon {
+        gap: 8px;
+    }
+
+    .bottom_header .container {
+        padding: 4px 2%;
+        gap: 10px;
+    }
+
+    .bottom_header .nav {
+        gap: 10px;
+    }
+
+    .bottom_header .nav_links {
+        gap: 12px;
+    }
+
+    .bottom_header .nav_links a {
+        font-size: 11px;
+    }
+}
+
+/* ========================================
+   TABLETS & MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    :root {
+        --top-header-height: 100px;
+        --bottom-header-height: 55px;
+    }
+
+    .Top .container {
+        flex-wrap: wrap;
+
+        padding: 5px 3%;
+        gap: 5px 10px;
+    }
+
+    .Top .container > a img {
+        width: 55px;
+        max-height: 42px;
+    }
+
+    .Top .search-box {
+        order: 3;
+
+        width: 100%;
+        height: 34px;
+    }
+
+    .Top .search-box input {
+        font-size: 12px;
+    }
+
+    .Top .Icon {
+        margin-left: auto;
+        gap: 8px;
+    }
+
+    .Top .Icon button {
+        width: 32px;
+        height: 32px;
+
+        font-size: 14px;
+    }
+
+    .bottom_header .container {
+        padding: 5px 3%;
+        gap: 8px;
+    }
+
+    .bottom_header .nav {
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .bottom_header .nav_links {
+        gap: 12px;
+    }
+
+    .bottom_header .nav_links a {
+        font-size: 11px;
+    }
+
+    .bottom_header .login_signup {
+        gap: 5px;
+    }
+
+    .bottom_header .login_signup .btn {
+        padding: 5px 7px;
+        font-size: 10px;
+    }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    :root {
+        --top-header-height: 100px;
+        --bottom-header-height: 60px;
+    }
+
+    .bottom_header .container {
+        flex-direction: row;
+        align-items: center;
+
+        gap: 6px;
+        padding: 5px 2%;
+    }
+
+    .bottom_header .nav {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 6px;
+    }
+
+    .bottom_header .category_btn {
+        width: auto;
+        padding: 6px 8px;
+
+        gap: 5px;
+    }
+
+    .bottom_header .category_btn p {
+        font-size: 10px;
+    }
+
+    .bottom_header .category_nav_list {
+        position: absolute;
+
+        top: calc(100% + 8px);
+        left: 0;
+
+        width: 200px;
+        max-height: 250px;
+
+        margin-top: 0;
+        box-sizing: border-box;
+    }
+
+    .bottom_header .nav_links {
+        justify-content: center;
+        flex-wrap: wrap;
+
+        gap: 5px 12px;
+    }
+
+    .bottom_header .nav_links a {
+        font-size: 10px;
+        padding: 3px 0;
+    }
+
+    .bottom_header .login_signup {
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .bottom_header .login_signup .btn {
+        padding: 5px 6px;
+        font-size: 9px;
+    }
+}
+
+/* ========================================
+   PAGE CONTENT OFFSET
+======================================== */
+
+/* عشان المحتوى ما يدخلش تحت الهيدر الثابت */
+
+body {
+    padding-top: calc(var(--top-header-height) + var(--bottom-header-height));
+}

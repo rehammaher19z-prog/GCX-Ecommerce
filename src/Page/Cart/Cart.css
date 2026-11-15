@@ -1,0 +1,471 @@
+
+/* Main Cart Section */
+.cart-hero {
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+   
+}
+
+/* Main Content */
+.cart-hero-content {
+  
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Cart Heading */
+.Content {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.cart-hero-content h4 {
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 22px;
+}
+
+.cart-hero-content h2 {
+    font-size: 25px;
+}
+
+.cart-hero-content p {
+    font-size: 16px;
+    margin: 0;
+}
+/* Empty Cart Section */
+
+/* Decorative Flowers */
+
+/* Products + Order Summary Layout */
+.ProductCart {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 350px;
+    align-items: start;
+    gap: 30px;
+    width: 100%;
+}
+
+/* Products List */
+.CartItemsList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    /* Firefox */
+    scrollbar-width: none;
+    scrollbar-color: var(--primary-color) var(--secondary-bg);
+}
+
+/* Chrome, Edge, Safari */
+.CartItemsList::-webkit-scrollbar {
+    width: 4px;
+}
+
+.CartItemsList::-webkit-scrollbar-track {
+    background: var(--secondary-bg);
+    border-radius: 10px;
+}
+
+.CartItemsList::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+.CartItemsList::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-hover);
+}
+
+/* Order Summary */
+.OrderSummary {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 25px;
+
+    background-color: var(--card-bg);
+    color: var(--text-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+/* Summary Title */
+.OrderSummary h3 {
+    font-size: 22px;
+    margin: 0 0 25px;
+    color: var(--text-color);
+}
+
+/* Summary Rows */
+.SummaryRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    font-size: 15px;
+    color: var(--secondary-text);
+}
+
+.SummaryRow span:last-child {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* Divider */
+.OrderSummary hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 20px 0;
+}
+
+/* Final Total */
+.SummaryTotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.SummaryTotal span:last-child {
+    color: var(--primary-color);
+    font-size: 22px;
+}
+
+/* Checkout Button */
+.CheckoutBtn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 9px;
+
+    background-color: var(--primary-color);
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.CheckoutBtn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.CheckoutBtn i {
+    margin-left: 10px;
+}
+
+/* Coupon Button */
+.CouponBtn {
+    width: 100%;
+    padding: 13px;
+    margin-top: 12px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 9px;
+
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.CouponBtn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.CouponBtn i {
+    margin-right: 8px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .ProductCart {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .OrderSummary {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .cart-hero {
+        padding: 25px 12px;
+    }
+
+    .cart-hero-content h4 {
+        font-size: 19px;
+    }
+
+    .Content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .NotFound {
+        min-height: 350px;
+        background-size: contain;
+    }
+}
+
+
+/* Empty Cart Background */
+.NotFound {
+    margin-top: -30px;
+    position: relative;
+    min-height: 82vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    isolation: isolate;
+
+    background:
+        radial-gradient(circle at 15% 20%, var(--secondary-bg), transparent 40%),
+        radial-gradient(circle at 85% 80%, var(--secondary-bg), transparent 40%),
+        var(--bg-color);
+}
+
+/* Flowers Background */
+.flowers-background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.flowers-background span {
+    position: absolute;
+    font-size: 30px;
+    opacity: 0.55;
+    animation: flowerFloat 4s ease-in-out infinite alternate;
+}
+
+/* Flowers Distribution */
+.flowers-background span:nth-child(1)  { left: 5%; top: 8%; }
+.flowers-background span:nth-child(2)  { left: 18%; top: 15%; }
+.flowers-background span:nth-child(3)  { left: 32%; top: 7%; }
+.flowers-background span:nth-child(4)  { left: 48%; top: 13%; }
+.flowers-background span:nth-child(5)  { left: 68%; top: 8%; }
+.flowers-background span:nth-child(6)  { left: 85%; top: 17%; }
+.flowers-background span:nth-child(7)  { left: 94%; top: 35%; }
+.flowers-background span:nth-child(8)  { left: 8%; top: 38%; }
+.flowers-background span:nth-child(9)  { left: 23%; top: 30%; }
+.flowers-background span:nth-child(10) { left: 38%; top: 42%; }
+.flowers-background span:nth-child(11) { left: 58%; top: 32%; }
+.flowers-background span:nth-child(12) { left: 78%; top: 42%; }
+.flowers-background span:nth-child(13) { left: 91%; top: 58%; }
+.flowers-background span:nth-child(14) { left: 3%; top: 65%; }
+.flowers-background span:nth-child(15) { left: 16%; top: 80%; }
+.flowers-background span:nth-child(16) { left: 30%; top: 70%; }
+.flowers-background span:nth-child(17) { left: 45%; top: 88%; }
+.flowers-background span:nth-child(18) { left: 63%; top: 75%; }
+.flowers-background span:nth-child(19) { left: 80%; top: 85%; }
+.flowers-background span:nth-child(20) { left: 95%; top: 92%; }
+.flowers-background span:nth-child(21) { left: 12%; top: 52%; }
+.flowers-background span:nth-child(22) { left: 27%; top: 92%; }
+.flowers-background span:nth-child(23) { left: 40%; top: 23%; }
+.flowers-background span:nth-child(24) { left: 54%; top: 58%; }
+.flowers-background span:nth-child(25) { left: 72%; top: 23%; }
+.flowers-background span:nth-child(26) { left: 88%; top: 72%; }
+.flowers-background span:nth-child(27) { left: 5%; top: 92%; }
+.flowers-background span:nth-child(28) { left: 35%; top: 55%; }
+.flowers-background span:nth-child(29) { left: 62%; top: 48%; }
+.flowers-background span:nth-child(30) { left: 75%; top: 95%; }
+.flowers-background span:nth-child(31) { left: 20%; top: 5%; }
+.flowers-background span:nth-child(32) { left: 50%; top: 95%; }
+.flowers-background span:nth-child(33) { left: 90%; top: 5%; }
+.flowers-background span:nth-child(34) { left: 2%; top: 25%; }
+.flowers-background span:nth-child(35) { left: 70%; top: 60%; }
+
+.flowers-background span:nth-child(even) {
+    font-size: 38px;
+    animation-delay: 1s;
+}
+
+.flowers-background span:nth-child(3n) {
+    font-size: 23px;
+    animation-delay: 2s;
+}
+
+/* Flower Animation */
+@keyframes flowerFloat {
+    from {
+        transform: translateY(0) rotate(-10deg);
+    }
+
+    to {
+        transform: translateY(-15px) rotate(10deg);
+    }
+}
+
+/* Glass Card */
+.empty-cart-card {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 480px;
+    padding: 45px 35px;
+    text-align: center;
+
+    background: color-mix(in srgb, var(--card-bg) 75%, transparent);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    box-shadow: 0 15px 45px var(--shadow-color);
+
+    animation: cardAppear 0.8s ease both;
+}
+
+/* Shopping Bag Icon */
+.empty-cart-icon {
+    width: 85px;
+    height: 85px;
+    margin: 0 auto 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+
+    color: var(--primary-color);
+    font-size: 35px;
+    animation: iconFloat 2.5s ease-in-out infinite;
+}
+
+/* Text */
+.empty-cart-card h2 {
+    color: var(--text-color);
+    font-size: 27px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.empty-cart-card p {
+    color: var(--secondary-text);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+/* Home Button */
+.home-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 27px;
+
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+
+    border-radius: 13px;
+    box-shadow: 0 7px 20px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+.home-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-4px);
+    color: white;
+}
+
+.home-btn i {
+    transition: transform 0.3s ease;
+}
+
+.home-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Animations */
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes iconFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .NotFound {
+        min-height: 70vh;
+       
+    }
+
+    .flowers-background span {
+        font-size: 22px;
+    }
+
+    .empty-cart-card {
+        padding: 35px 22px;
+    }
+
+    .empty-cart-card h2 {
+        font-size: 23px;
+    }
+
+    .empty-cart-card p {
+        font-size: 13px;
+    }
+
+    .empty-cart-icon {
+        width: 75px;
+        height: 75px;
+        font-size: 30px;
+    }
+}
